@@ -1,17 +1,239 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Online</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Supondo que haja um arquivo CSS externo -->
+</head>
 <body>
-  <header>
-  </header>
+    <!-- Header -->
+    <header>
+        <div class="logo">LOGO</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar produtos">
+            <button>Buscar</button>
+        </div>
+    </header>
 
-  
+    <!-- Página Inicial -->
+    <main>
+        <!-- Banner -->
+        <section class="banner">
+            <img src="banner.jpg" alt="Promoção destaque">
+        </section>
+
+        <!-- Categorias -->
+        <section class="categorias">
+            <h2>Categorias</h2>
+            <div class="categoria-blocos">
+                <div class="categoria">Eletrônicos</div>
+                <div class="categoria">Roupas</div>
+                <div class="categoria">Acessórios</div>
+                <div class="categoria">Casa e Cozinha</div>
+            </div>
+        </section>
+
+        <!-- Produtos em Destaque -->
+        <section class="produtos-destaque">
+            <h2>Produtos em Destaque</h2>
+            <div class="grid-produtos">
+                <div class="produto">
+                    <img src="produto1.jpg" alt="Produto 1">
+                    <h3>Produto 1</h3>
+                    <p>R$100,00</p>
+                    <button>Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <img src="produto2.jpg" alt="Produto 2">
+                    <h3>Produto 2</h3>
+                    <p>R$200,00</p>
+                    <button>Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="links-uteis">
+            <a href="sobre.html">Sobre nós</a>
+            <a href="termos.html">Termos de uso</a>
+            <a href="newsletter.html">Newsletter</a>
+        </div>
+        <div class="redes-sociais">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <!-- Página de Busca de Produtos -->
+    <main>
+        <div class="busca-produtos">
+            <aside class="filtros">
+                <h3>Filtros</h3>
+                <div class="filtro-preco">
+                    <label for="preco">Preço:</label>
+                    <input type="range" id="preco" name="preco" min="0" max="1000">
+                </div>
+                <div class="filtro-categoria">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria" name="categoria">
+                        <option value="eletronicos">Eletrônicos</option>
+                        <option value="roupas">Roupas</option>
+                    </select>
+                </div>
+            </aside>
+
+            <section class="lista-produtos">
+                <h2>Resultados da Busca</h2>
+                <div class="grid-produtos">
+                    <div class="produto">
+                        <img src="produto3.jpg" alt="Produto 3">
+                        <h3>Produto 3</h3>
+                        <p>R$150,00</p>
+                        <button>Adicionar ao Carrinho</button>
+                    </div>
+                    <!-- Mais produtos -->
+                </div>
+                <div class="paginacao">
+                    <a href="#">&laquo; Anterior</a>
+                    <a href="#">Próximo &raquo;</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Página de Login -->
+    <main>
+        <section class="login-form">
+            <h2>Login</h2>
+            <form action="autenticar.html" method="POST">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email">
+                
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha">
+                
+                <button type="submit">Entrar</button>
+                <a href="#">Esqueci minha senha</a>
+            </form>
+            <div class="social-login">
+                <p>Ou faça login com:</p>
+                <button>Google</button>
+                <button>Facebook</button>
+            </div>
+            <a href="cadastrar.html">Cadastrar-se</a>
+        </section>
+    </main>
+
+    <!-- Página de Configurações da Conta -->
+    <main>
+        <section class="configuracoes-conta">
+            <h2>Configurações da Conta</h2>
+            <div class="info-pessoal">
+                <h3>Informações Pessoais</h3>
+                <p>Nome: João da Silva</p>
+                <p>E-mail: joao@email.com</p>
+                <button>Editar</button>
+            </div>
+            <div class="enderecos">
+                <h3>Endereços de Entrega</h3>
+                <ul>
+                    <li>Rua A, Nº 123</li>
+                    <li>Rua B, Nº 456</li>
+                </ul>
+                <button>Adicionar Novo Endereço</button>
+            </div>
+            <div class="preferencias">
+                <h3>Preferências</h3>
+                <label for="notificacoes">Receber notificações:</label>
+                <input type="checkbox" id="notificacoes">
+            </div>
+            <div class="seguranca">
+                <h3>Segurança</h3>
+                <button>Alterar Senha</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Página do Carrinho de Compras -->
+    <main>
+        <section class="carrinho">
+            <h2>Seu Carrinho</h2>
+            <div class="produtos-carrinho">
+                <div class="produto-carrinho">
+                    <img src="produto1.jpg" alt="Produto 1">
+                    <p>Produto 1</p>
+                    <p>Quantidade: 2</p>
+                    <p>R$200,00</p>
+                    <button>Remover</button>
+                </div>
+                <!-- Mais produtos no carrinho -->
+            </div>
+            <div class="resumo-pedido">
+                <p>Subtotal: R$400,00</p>
+                <p>Frete: R$20,00</p>
+                <p>Total: R$420,00</p>
+                <button>Ir para Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Página de Checkout -->
+    <main>
+        <section class="checkout">
+            <h2>Checkout</h2>
+            <form action="confirmar-compra.html" method="POST">
+                <div class="dados-pessoais">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+                    <label for="endereco">Endereço de entrega:</label>
+                    <input type="text" id="endereco" name="endereco">
+                </div>
+                <div class="pagamento">
+                    <label for="cartao">Número do Cartão:</label>
+                    <input type="text" id="cartao" name="cartao">
+                    <label for="validade">Validade:</label>
+                    <input type="text" id="validade" name="validade">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv">
+                    <input type="checkbox" id="salvar-cartao"> <label for="salvar-cartao">Salvar cartão para futuras compras</label>
+                </div>
+                <div class="resumo-compra">
+                    <p>Produtos: R$400,00</p>
+                    <p>Frete: R$20,00</p>
+                    <p>Total: R$420,00</p>
+                    <button type="submit">Confirmar Compra</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Página de Compra Aprovada -->
+    <main>
+        <section class="compra-aprovada">
+            <h2>Compra Aprovada!</h2>
+            <p>Obrigado pela sua compra. Seu pedido foi aprovado com sucesso.</p>
+            <div class="resumo-pedido">
+                <p>Produtos: R$400,00</p>
+                <p>Total: R$420,00</p>
+                <p>Entrega para: Rua A, Nº 123</p>
+                <p>Prazo de entrega: 5 dias úteis</p>
+            </div>
+            <a href="index.html">Voltar para Início</a>
+            <a href="produtos.html">Ver mais produtos</a>
+        </section>
+    </main>
+
 </body>
+</html>
