@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Loja do Charles - Busca de Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para a logo */
+        .navbar-logo {
+            width: 50px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            margin-right: 8px;
+        }
+
+        /* Estilo para as imagens dos produtos */
+        .produto img {
+            width: 100%; /* Para ocupar o espaço disponível no card */
+            height: auto;
+            max-height: 250px; /* Limita a altura para manter a proporção */
+            object-fit: contain; /* Mantém a proporção da imagem */
+        }
+
+        /* Ajuste do layout em dispositivos menores */
+        @media (max-width: 576px) {
+            .produto img {
+                max-height: 200px; /* Ajusta a altura máxima em telas menores */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="charles-header">
+        <nav id="topoDaPagina" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">
+                <img src="Imagens/Logo.png" alt="Logo Loja do Charles" class="navbar-logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="C:/Users/Guilherme/Documents/PEX/PEX.html">Home <span class="sr-only">(Página atual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Carrinho</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="charles-main-content container my-5">
+        <div class="row busca-produtos">
+            <!-- Filtros -->
+            <aside class="col-md-3 filtros bg-light p-3 rounded">
+                <h3>Filtros</h3>
+
+                <!-- Campo de Pesquisa -->
+                <div class="campo-pesquisa my-3">
+                    <label for="pesquisa">Pesquisar:</label>
+                    <input type="text" id="pesquisa" name="pesquisa" class="form-control" placeholder="Digite o que deseja buscar">
+                </div>
+
+                <!-- Filtro de Preço -->
+                <div class="filtro-preco my-3">
+                    <label for="preco">Preço (R$):</label>
+                    <input type="range" id="preco" name="preco" min="0" max="1000" step="50" class="form-control-range" oninput="atualizarPreco(this.value)">
+                    <div class="d-flex justify-content-between">
+                        <span>R$0</span>
+                        <span>R$1000</span>
+                    </div>
+                    <p>Preço máximo selecionado: <span id="valorPreco">R$0</span></p>
+                </div>
+
+                <div class="filtro-categoria my-3">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria" name="categoria" class="form-control">
+                        <option value="todos">Todas as Categorias</option>
+                        <option value="eletronicos">Eletrônicos</option>
+                        <option value="roupas">Roupas</option>
+                        <option value="acessorios">Acessórios</option>
+                        <option value="casa-cozinha">Casa e Cozinha</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary btn-block mt-3">Aplicar Filtros</button>
+            </aside>
+
+            <!-- Lista de Produtos -->
+            <section class="col-md-9 lista-produtos">
+                <h2 class="charles-section-title">Resultados da Busca</h2>
+                <div class="grid-produtos row">
+                    <!-- Produto 1 -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card">
+                            <img src="Imagens/Calça.png" class="card-img-top" alt="Produto 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Calça</h5>
+                                <p class="card-text">R$200,00</p>
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Produto 2 -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card">
+                            <img src="Imagens/Tênis_Feminino.png" class="card-img-top" alt="Produto 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Tênis</h5>
+                                <p class="card-text">R$400,00</p>
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Produto 3 -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card">
+                            <img src="Imagens/Bolsa_Feminina.png" class="card-img-top" alt="Produto 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Bolsa</h5>
+                                <p class="card-text">R$800,00</p>
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Produto 4 -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card">
+                            <img src="produto4.jpg" class="card-img-top" alt="Produto 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Produto 4</h5>
+                                <p class="card-text">R$250,00</p>
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Produto 5 -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card">
+                            <img src="produto5.jpg" class="card-img-top" alt="Produto 5">
+                            <div class="card-body">
+                                <h5 class="card-title">Produto 5</h5>
+                                <p class="card-text">R$300,00</p>
+                                <button class="btn btn-primary">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paginação -->
+                <div class="paginacao d-flex justify-content-center mt-4">
+                    <a href="#" class="btn btn-secondary mx-2">&laquo; Anterior</a>
+                    <a href="#" class="btn btn-secondary mx-2">Próximo &raquo;</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="charles-footer bg-dark text-light py-4">
+        <div class="container d-flex justify-content-between">
+            <div class="links-uteis">
+                <a href="sobre.html" class="text-light">Sobre nós</a>
+                <a href="termos.html" class="text-light ml-3">Termos de uso</a>
+                <a href="newsletter.html" class="text-light ml-3">Newsletter</a>
+            </div>
+            <div class="redes-sociais">
+                <a href="#" class="text-light">Facebook</a>
+                <a href="#" class="text-light ml-3">Instagram</a>
+                <a href="#" class="text-light ml-3">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBkKu5G3F5a56ep6A7uOF5eyOZoGIKxfSZ2oPQDyj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!--</script> Script para atualizar o valor do preço -->
+    <script>
+       function atualizarPreco(valor) {
+           document.getElementById('valorPreco').textContent = 'R$' + parseInt(valor).toLocaleString('pt-BR');
+       }
+   </script>
+</body>
+</html>
