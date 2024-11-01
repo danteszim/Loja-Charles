@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Loja do Charles - Loja Online</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Estilos personalizados -->
+    <style>
+        /* Estilo para a logo */
+        .navbar-logo {
+            width: 50px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            margin-right: 8px;
+        }
+
+        /* Estilo para as imagens dos produtos */
+        .produto img {
+            width: 100%; /* Para ocupar o espaço disponível no card */
+            height: auto;
+            max-height: 250px; /* Limita a altura para manter a proporção */
+            object-fit: contain; /* Mantém a proporção da imagem */
+        }
+
+        /* Ajuste do layout em dispositivos menores */
+        @media (max-width: 576px) {
+            .produto img {
+                max-height: 200px; /* Ajusta a altura máxima em telas menores */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="charles-header">
+        <nav id="topoDaPagina" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="C:/Users/Guilherme/Documents/PEX/Imagens/Logo.png" alt="Logo Loja do Charles" class="navbar-logo" />
+                <span>Loja do Charles</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="PEX.html">Home <span class="sr-only">(Página atual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PEX_Pesquisa.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Carrinho</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Página Inicial -->
+    <main class="charles-main-content container">
+        <!-- Banner -->
+        <section class="banner my-4">
+            <img src="imagens/banner.jpg" alt="Promoção destaque" class="img-fluid">
+        </section>
+
+        <!-- Produtos em Destaque -->
+        <section class="produtos-destaque my-5">
+            <h2 class="charles-section-title">Produtos em Destaque</h2>
+            <div class="grid-produtos row">
+                <!-- Produto 1 -->
+                <div class="produto col-md-6 col-lg-4 text-center mb-4">
+                    <div class="charles-card p-3">
+                        <img src="C:/Users/Guilherme/Documents/PEX/Imagens/Calça.png" alt="Produto 1" class="img-fluid mb-3">
+                        <h3 class="charles-product-name">Calça</h3>
+                        <p class="charles-product-price">R$200,00</p>
+                        <button onclick="window.location.href='produto1.html'" class="btn btn-primary charles-btn">Ver Produto</button>
+                    </div>
+                </div>
+                <!-- Produto 2 -->
+                <div class="produto col-md-6 col-lg-4 text-center mb-4">
+                    <div class="charles-card p-3">
+                        <img src="C:/Users/Guilherme/Documents/PEX/Imagens/Tênis_Feminino.png" alt="Produto 2" class="img-fluid mb-3">
+                        <h3 class="charles-product-name">Tênis</h3>
+                        <p class="charles-product-price">R$400,00</p>
+                        <button onclick="window.location.href='produto2.html'" class="btn btn-primary charles-btn">Ver Produto</button>
+                    </div>
+                </div>
+                <!-- Produto 3 -->
+                <div class="produto col-md-6 col-lg-4 text-center mb-4">
+                    <div class="charles-card p-3">
+                        <img src="C:/Users/Guilherme/Documents/PEX/Imagens/Bolsa_Feminina.png" alt="Produto 3" class="img-fluid mb-3">
+                        <h3 class="charles-product-name">Bolsa</h3>
+                        <p class="charles-product-price">R$800,00</p>
+                        <button onclick="window.location.href='produto3.html'" class="btn btn-primary charles-btn">Ver Produto</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Rodapé -->
+    <footer class="charles-footer bg-dark text-light py-4">
+        <div class="container d-flex justify-content-between">
+            <div class="links-uteis">
+                <a href="sobre.html" class="text-light">Sobre nós</a>
+                <a href="termos.html" class="text-light ml-3">Termos de uso</a>
+                <a href="newsletter.html" class="text-light ml-3">Newsletter</a>
+            </div>
+            <div class="redes-sociais">
+                <a href="#" class="text-light">Facebook</a>
+                <a href="#" class="text-light ml-3">Instagram</a>
+                <a href="#" class="text-light ml-3">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBkKu5G3F5a56ep6A7uOF5eyOZoGIKxfSZ2oPQDyj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
