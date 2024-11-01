@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja do Charles</title>
+    <link rel="stylesheet" href="carrinho.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Carrinho de Compras</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Total</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="produto1.jpg" alt="Produto 1" class="produto-imagem">
+                    </td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>R$ 50,00</td>
+                    <td>R$ 50,00</td>
+                    <td><button>Remover</button></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="produto2.jpg" alt="Produto 2" class="produto-imagem">
+                    </td>
+                    <td><input type="number" value="2" min="1"></td>
+                    <td>R$ 30,00</td>
+                    <td>R$ 60,00</td>
+                    <td><button>Remover</button></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="produto3.jpg" alt="Produto 3" class="produto-imagem">
+                    </td>
+                    <td><input type="number" value="1" min="1"></td>
+                    <td>R$ 20,00</td>
+                    <td>R$ 20,00</td>
+                    <td><button>Remover</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total-container "> <!-- cara como coloca isso do lado um do outro? pra so haver alterações nos valores -->
+            <div class="valorFinal">
+                <h2>Subtotal:</h2>
+                <h2>Frete: </h2>
+                <h2>Subtotal:</h2>
+                <h2>R$ 100,00</h2>
+                <h2>R$ 15,00</h2> 
+                <h2>R$ 115,00</h2> 
+            </div>
+            <button class="checkout">Finalizar Compra</button>
+        </div>  
+        
+    </div>
+</body>
+</html>
