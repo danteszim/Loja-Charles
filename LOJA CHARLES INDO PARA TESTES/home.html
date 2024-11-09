@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Keyla Moda Feminina</title>
+    <style>
+          /* Estilo para a logo */
+          .navbar-logo {
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            margin-right: 8px;
+        }
+
+        /* Estilo para a imagem do Banner */
+        .banner img {
+            width: 100%; /* Faz com que a largura da imagem ocupe todo o contêiner */
+            height: auto; /* Mantém a altura proporcional */
+            max-height: 400px; /* Limita a altura máxima da imagem */
+            object-fit: contain; /* Garante que a imagem se ajuste dentro do contêiner sem distorcer */
+            background-color: black;
+        }
+
+        /* Estilo para as imagens dos produtos */
+        .produto img {
+            width: 100%; /* A imagem ocupa toda a largura disponível do contêiner */
+            height: auto; /* Mantém a altura proporcional */
+            max-height: 250px; /* Limita a altura máxima da imagem */
+            object-fit: contain; /* Garante que a imagem se ajuste sem distorcer */
+        }
+
+        /* Ajuste do layout em dispositivos menores */
+        @media (max-width: 576px) {
+            .produto img {
+                max-height: 200px; /* Ajusta a altura máxima em telas menores */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="charles-header">
+        <nav id="topoDaPagina" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand d-flex align-items-center" href="home.html">
+                <img src="Imagens/Logo_Site.png" alt="" class="navbar-logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(Página atual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="produtos.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrinho.html">Carrinho</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Página Inicial -->
+    <main class="charles-main-content container">
+        <!-- Banner -->
+        <section class="banner my-4">
+            <a href="produtos.html" class="d-block">
+                <div id="bannerCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <img src="imagens/Tee_e_Shorts.png" alt="Promoção destaque" class="img-fluid">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <img src="imagens/Calça.png" alt="Promoção destaque 2" class="img-fluid">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <img src="imagens/Tênis_Feminino.png" alt="Promoção destaque 3" class="img-fluid">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#bannerCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="carousel-control-next" href="#bannerCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                </div>
+            </a>
+        </section>
+    </main>
+    
+    <!-- Rodapé -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Keyla Moda Feminina</h5>
+                    <p>Sua loja de moda feminina favorita</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <h5>Redes Sociais</h5>
+                    <a href="#" class="text-light mr-3">Facebook</a>
+                    <a href="https://www.instagram.com/keylamodasfashion_/" class="text-light">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBkKu5G3F5a56ep6A7uOF5eyOZoGIKxfSZ2oPQDyj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

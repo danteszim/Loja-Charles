@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <title>Keyla Moda Feminina - Busca de Produtos</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <style>
+              /* Estilo para a logo */
+        .navbar-logo {
+            width: 100px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        /* Estilo para as imagens dos produtos */
+        .produto img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        /* Layout do card para ser responsivo */
+        .produto .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 180px;
+        }
+
+        /* Ajuste para dispositivos menores */
+        @media (max-width: 576px) {
+            .produto img {
+                height: 150px;
+            }
+
+            /* Alinha itens do cabeçalho ao centro */
+            .navbar-brand, .navbar-nav {
+                text-align: center;
+                margin: auto;
+            }
+
+            /* Estilo para filtro e lista de produtos ficarem em coluna */
+            .busca-produtos {
+                flex-direction: column;
+            }
+
+            /* Ajuste de largura para filtro ocupar 100% em telas pequenas */
+            .filtros {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            /* Produtos em coluna única em telas pequenas */
+            .grid-produtos .produto {
+                flex: 1 1 100%;
+            }
+        }
+
+        /* Ajustes para tablets e telas médias */
+        @media (max-width: 768px) {
+            /* Grid de produtos para duas colunas */
+            .grid-produtos .produto {
+                flex: 1 1 50%;
+            }
+        }
+
+        /* Ajuste geral para o rodapé */
+        .charles-footer .container {
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .charles-footer .links-uteis,
+        .charles-footer .redes-sociais {
+            margin-top: 10px;
+        }
+        </style>
+    </head>
+<body>
+    <header class="charles-header">
+        <nav id="topoDaPagina" class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="home.html">
+                <img src="Imagens/Logo_Site.png" alt="Keyla Moda Feminina" class="navbar-logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home.html">Home <span class="sr-only">(Página atual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrinho.html">Carrinho</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="charles-main-content container my-5">
+        <div class="row busca-produtos">
+            <aside class="col-md-3 filtros bg-light p-3 rounded">
+                <h3>Filtros</h3>
+
+                <!-- Campo de Pesquisa -->
+                <div class="campo-pesquisa my-3">
+                    <label for="pesquisa">Pesquisar:</label>
+                    <input type="text" id="pesquisa" name="pesquisa" class="form-control" placeholder="Digite o que deseja buscar">
+                </div>
+
+                <!-- Filtro de Preço -->
+                <div class="filtro-preco my-3">
+                    <label for="preco">Preço (R$):</label>
+                    <input type="range" id="preco" name="preco" min="0" max="1000" step="50" class="form-control-range" oninput="atualizarPreco(this.value)">
+                    <div class="d-flex justify-content-between">
+                        <span>R$0</span>
+                        <span>R$1000</span>
+                    </div>
+                    <p>Preço máximo selecionado: <span id="valorPreco">R$0</span></p>
+                </div>
+
+                <div class="filtro-categoria my-3">
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria" name="categoria" class="form-control">
+                        <option value="todos">Todas as Categorias</option>
+                        <option value="roupas">Roupas</option>
+                        <option value="acessorios">Acessórios</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary btn-block mt-3">Aplicar Filtros</button>
+            </aside>
+
+            <!-- Lista de Produtos -->
+            <section class="col-md-9 lista-produtos">
+                <h2 class="charles-section-title">Resultados da Busca</h2>
+                <div class="grid-produtos row">
+                    <!-- Produto 1: Calça -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card" data-produto-id="1">
+                            <img src="Imagens/Calça.png" class="card-img-top" alt="Calça">
+                            <div class="card-body">
+                                <h5 class="card-title">Calça</h5>
+                                <p class="card-text">R$200,00</p>
+                                <button class="btn btn-primary btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 2: Tênis -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card" data-produto-id="2">
+                            <img src="Imagens/Tênis_Feminino.png" class="card-img-top" alt="Tênis">
+                            <div class="card-body">
+                                <h5 class="card-title">Tênis</h5>
+                                <p class="card-text">R$400,00</p>
+                                <button class="btn btn-primary btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 3: Bolsa -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card" data-produto-id="3">
+                            <img src="Imagens/Bolsa_Feminina.png" class="card-img-top" alt="Bolsa">
+                            <div class="card-body">
+                                <h5 class="card-title">Bolsa</h5>
+                                <p class="card-text">R$800,00</p>
+                                <button class="btn btn-primary btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produto 4: Blusinha -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card" data-produto-id="4">
+                            <img src="Imagens/Blusinha.png" class="card-img-top" alt="Blusinha">
+                            <div class="card-body">
+                                <h5 class="card-title">Blusinha</h5>
+                                <p class="card-text">R$250,00</p>
+                                <button class="btn btn-primary btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Produto 5 -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card" data-produto-id="5">
+                            <img src="Imagens/Tee_e_Shorts.png" class="card-img-top" alt="Produto 5">
+                            <div class="card-body">
+                                <h5 class="card-title">Tee e Shorts</h5>
+                                <p class="card-text">R$400,00</p>
+                                <button class="btn btn-primary btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Produto 6 -->
+                    <div class="col-md-4 produto mb-4">
+                        <div class="card" data-produto-id="6">
+                            <img src="Imagens/Vestido_Azul.png" class="card-img-top" alt="Produto 6">
+                            <div class="card-body">
+                                <h5 class="card-title">Vestido Azul</h5>
+                                <p class="card-text">R$350,00</p>
+                                <button class="btn btn-primary btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- Continuação para outros produtos... -->
+                </div>
+
+                <div class="paginacao d-flex justify-content-center mt-4">
+                    <a href="#" class="btn btn-secondary mx-2">&laquo; Anterior</a>
+                    <a href="#" class="btn btn-secondary mx-2">Próximo &raquo;</a>
+                </div>
+            </section>
+        </div>
+    
+            </section>
+
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Keyla Moda Feminina</h5>
+                    <p>Sua loja de moda feminina favorita</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <h5>Redes Sociais</h5>
+                    <a href="#" class="text-light mr-3">Facebook</a>
+                    <a href="https://www.instagram.com/keylamodasfashion_/" class="text-light">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts do Bootstrap (mantenha os existentes) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <!-- Adicione o script do carrinho -->
+    <script src="carrinho-manager.js"></script>
+
+    <!-- Script para atualizar o valor do preço (mantenha o existente) -->
+    <script>
+        function atualizarPreco(valor) {
+            document.getElementById('valorPreco').textContent = 'R$' + parseInt(valor).toLocaleString('pt-BR');
+        }
+    </script>
+</body>
+</html>
