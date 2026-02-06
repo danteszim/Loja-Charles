@@ -1,3 +1,3 @@
 # Loja-Charles faculdade
 
-loja criada para aula do terceiro
+loja criada para aula do terceiro semestre da faculdade
