@@ -2,5 +2,3 @@
 
 loja criada para aula do terceiro semestre da faculdade
 aprovado
-
-test
